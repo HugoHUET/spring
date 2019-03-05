@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import io.github.jeemv.springboot.vuejs.VueJS;
 import io.github.jeemv.springboot.vuejs.utilities.Http;
+import io.github.jeemv.springboot.vuejs.utilities.JsArray;
 import s4.spring.td2.entities.Organisation;
 import s4.spring.td2.repositories.OrgaRepositoriy;
 
@@ -59,10 +60,32 @@ public class TestVueController {
 		vue.addDataRaw("editedIndex", "-1");
 		vue.addComputed("formTitle", "(this.itemIndex==-1)?'Nouvelle orga':'Modification orga'");
 		vue.addMethod("close", "this.dialog=false;");
-		vue.addMethod("save",
-				"var self=this;"+Http.post("/rest/orgas/create",
-				"self.editedItem", 
-				"self.orgas.push(response.data);self.dialog=false;"));
+		
+		vue.addMethod(
+				"save",
+				"var self=this;"+Http.post(
+						"/rest/orgas/create",
+						"self.editedItem", 
+						"self.orgas.push(response.data);self.dialog=false;")
+				);
+		
+		vue.addMethod(
+				"deleteItem",
+				"var self=this;"+Http.delete(
+						"/rest/orgas/delete",
+						(Object)"{data:orga}",
+						JsArray.remove("self.orgas", "orga")),
+				"orga");
+		
+		vue.addMethod(
+				"editItem",
+				"var self=this; self.dialog=true; self.editedIndex=1; self.editedItem=orga;"+Http.put(
+						"/rest/orgas/update",
+						(Object)"{data:orga}",
+						"console.log('ok ?');"),
+				"orga");
+		
+		
 		
 		return "vueJs/index";
 	}

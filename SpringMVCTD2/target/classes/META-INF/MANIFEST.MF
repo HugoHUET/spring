@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: Hugo
+Build-Jdk: 9.0.4
+Implementation-Title: td2
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: s4.spring
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/td2
+Created-By: Maven Integration for Eclipse
+
