@@ -1,0 +1,53 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+<div style="margin-top:2%;margin-left:2%;">
+	<div id="titre"><i class="big envelope icon"></i>SpringBoot TD n°2<br>Application de messagerie</div>
+	<div id="main" class="ui segment" >
+		<a class="ui secondary button" href="/orgas/new"><i class="plus icon"></i>Ajouter une organisation...</a>
+		<table class="ui celled striped table">
+			<thead>
+				<tr>
+					<th>Id</th>
+			    	<th>Name</th>
+			    	<th>Domain</th>
+			    	<th>Aliases</th>
+			    </tr>
+			</thead>
+			<tbody>
+				{{#orgas}}
+					<tr style="height:50px;">
+						<th>{{id}}</th>
+						<th>{{nom}}</th>
+						<th>{{domain}}</th>
+						<th>
+							{{aliases}}
+							<div style="float: right;">
+								<a class="circular ui basic icon button" href="/orgas/display/{{id}}">
+									<i class="eye icon"></i>
+								</a>
+								<a class="circular ui basic icon button" href="/orgas/edit/{{id}}">
+									<i class="edit outline icon"></i>
+								</a>
+								<a class="circular ui basic icon button red" href="/orgas/delete/{{id}}">
+									<i class="close icon"></i>
+								</a>
+							</div>
+						</th>
+					</tr>
+				{{/orgas}}
+			</tbody>
+			<tfoot>
+				<tr>
+					<th colspan="4">
+						<div class="ui search" style="float:right;">
+							<div class="ui icon input">
+								<input class="prompt" type="text" placeholder="Search...">
+								<i class="search icon"></i>
+							</div>
+							<div class="results"></div>
+						</div>
+					</th>
+				</tr>
+			</tfoot>
+		</table>
+	</div>
+</div>

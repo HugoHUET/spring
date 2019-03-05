@@ -1,0 +1,12 @@
+{{> /index}}
+<div class="ui error message">
+	<i class="close icon"></i>
+	<div class="header">
+		Confirmation de suppression
+	</div>
+	<p>Confirmez-vous la suppression de '{{orga.nom}}' ?</p>
+	<div style="margin-left:0px;">
+		<a class="lightgrey ui button" href="/orgas/index"><i class="circle outline icon"></i>Annuler</a>
+		<a class="negative ui button" href="/orgas/deleteForm/{{orga.id}}"><i class="check circle icon"></i>Confirmer</a>
+	</div>
+</div>

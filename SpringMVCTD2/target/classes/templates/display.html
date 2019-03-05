@@ -1,0 +1,56 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+<div style="margin-top:2%;margin-left:2%;">
+	<div id="titre"><i class="big envelope icon"></i>SpringBoot TD n°2<br>Application de messagerie</div>
+	<div style="width:80%;" class="ui placeholder segment">
+		<div style="margin-left:0px;">
+			<a href="/orgas/index" class="ui button" style="display:inline; margin-right:1%;">
+		    	<i class="close icon"></i> Fermer
+		  	</a>
+		  	<a href="/orgas/delete/{{orga.id}}" style="background: none; color: red; border: 1px solid red; display:inline-block; margin-right:1%;"" class="ui button">
+		    	<i style="color: red;" class="close icon"></i> Supprimer {{orga.domain}}...
+		  	</a>
+		  	<a href="/orgas/edit/{{orga.id}}" style="background: none; color: grey; border: 1px solid grey; display:inline-block;" class="ui button">
+		    	<i style="color: grey;" class="edit icon"></i> Modifier {{orga.domain}}
+		  	</a>
+		  </div>
+	  	
+	  	<table class="ui definition table">
+		  	<tbody>
+			    <tr>
+			      <td>Id</td>
+			      <td>{{orga.id}}</td>
+			    </tr>
+			    <tr>
+			      <td>Name</td>
+			      <td>{{orga.nom}}</td>
+			    </tr>
+			    <tr>
+			      <td>Domain</td>
+			      <td>{{orga.domain}}</td>
+			    </tr>
+			    <tr>
+			      <td>Aliases</td>
+			      <td>{{orga.aliases}}</td>
+			    </tr>
+			    <tr>
+			      <td>Groupes</td>
+			      <td>
+			      	{{#groupes}}
+			      		<p>{{name}}</p>
+			      	{{/groupes}}
+			      </td>
+			    </tr>
+			    <tr>
+			      <td>OrganisationSettings</td>
+			      <td></td>
+			    </tr>
+			    <tr>
+			      <td>Users</td>
+			      <td></td>
+			    </tr>
+		    
+			</tbody>
+		</table>
+	  	
+	</div>
+</div>

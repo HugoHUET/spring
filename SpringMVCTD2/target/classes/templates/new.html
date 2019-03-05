@@ -1,0 +1,22 @@
+<link href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" rel="stylesheet">
+<div style="margin-top:2%;margin-left:2%;">
+	<div id="titre" class="ui segment" style="width:80%;"><i class="big calendar plus outline icon"></i>models\Organitazion<br>New object creation</div>
+	<form modelAttribute="organisation" class="ui form" style="width:80%;" action="new" method="POST">
+	  <div class="field">
+	    <label>Name</label>
+	    <input type="text" path="nom" name="nom" placeholder="Name">
+	  </div>
+	  <div class="field">
+	    <label>Domain</label>
+	    <input type="text" path="domain" name="domain" placeholder="Domain">
+	  </div>
+	  <div class="field">
+	    <label>Aliases</label>
+	    <input type="text" path="aliases" name="aliases" placeholder="Aliases">
+	  </div>
+	  <div class="ui segment field">
+	    <button class="positive ui button" type="submit"><i class="check circle icon"></i>Validate</button>
+	    <a class="lightgrey ui button" href="index"><i class="circle outline icon"></i>Cancel</a>
+	  </div>
+	</form>
+</div>
